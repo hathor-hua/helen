@@ -237,6 +237,59 @@ footer {
     text-decoration: underline;
 }
 
+/* Archive Page */
+.archive h2 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-light);
+}
+
+.archive-year h3 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.archive-list {
+    list-style: none;
+    margin: 0 0 2rem 0;
+}
+
+.archive-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.archive-list time {
+    color: #999;
+    font-size: 0.9rem;
+    min-width: 50px;
+}
+
+.archive-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    flex: 1;
+}
+
+.archive-list a:hover {
+    color: var(--accent-color);
+}
+
+.archive-list .tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent-color);
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     body {
