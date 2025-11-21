@@ -211,6 +211,15 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+.article-content ul,
+.article-content ol {
+    margin: 0 0 1.5rem 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
 .article-content h2 {
     font-size: 1.3rem;
     color: var(--accent-color);
