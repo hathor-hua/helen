@@ -1,12 +1,12 @@
 /* 海倫講看脈 - 輕鬆溫暖的風格 */
 
 :root {
-    --bg-color: #faf8f5;
-    --text-color: #4a4a4a;
-    --accent-color: #e07b53;
-    --accent-light: #f5d6cb;
-    --card-bg: #ffffff;
-    --border-color: #e8e4df;
+    --bg-color: #f5f3f0;
+    --text-color: #5a5652;
+    --accent-color: #8b7d6b;
+    --accent-light: #e8e2da;
+    --card-bg: #fdfcfb;
+    --border-color: #e0dbd5;
 }
 
 * {
@@ -87,7 +87,7 @@ main {
 
 /* Intro Section */
 .intro {
-    background: linear-gradient(135deg, var(--accent-light) 0%, #fef3ef 100%);
+    background: linear-gradient(135deg, var(--accent-light) 0%, #f9f7f5 100%);
     padding: 2rem;
     border-radius: 16px;
     margin-bottom: 2rem;
