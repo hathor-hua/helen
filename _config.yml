@@ -1,0 +1,32 @@
+# 海倫講看脈 - Jekyll 設定
+title: 海倫講看脈
+description: 看人、看脈、看故事
+url: "https://helen.tw"
+baseurl: ""
+
+# 作者資訊
+author:
+  name: 海倫
+
+# 文章設定
+permalink: /posts/:title/
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# 編碼
+encoding: UTF-8
+lang: zh-TW
+
+# 建置設定
+markdown: kramdown
+highlighter: rouge
+
+# 排除檔案
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

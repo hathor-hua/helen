@@ -1,0 +1,14 @@
+<header>
+    <div class="header-content">
+        <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.title }}" class="logo">
+        <div class="site-title">
+            <h1>{{ site.title }}</h1>
+            <p class="tagline">{{ site.description }}</p>
+        </div>
+    </div>
+    <nav aria-label="主要導覽">
+        <a href="{{ '/' | relative_url }}">首頁</a>
+        <a href="{{ '/archive' | relative_url }}">全部文章</a>
+        <a href="{{ '/#about' | relative_url }}">關於</a>
+    </nav>
+</header>
