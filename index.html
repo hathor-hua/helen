@@ -1,22 +1,24 @@
 ---
 layout: default
-title: 生活觀察與思考筆記
-description: 海倫講看脈 - 一個分享生活觀察、人性思考與個人見解的部落格。用輕鬆的方式，講看看各種事情。
+title: PM 的身體觀察筆記
+description: 海倫講看脈 - 我是海倫，理科腦 PM。這裡沒有艱澀的醫理，只有對身體訊號的觀察。分享那些關於職場、情緒與脈象背後的真實故事。
 ---
 
 <section class="intro" aria-label="簡介">
     <p>嗨，我是海倫。</p>
-    <p>這裡是我的思考筆記。有時候聊生活，有時候聊人性，總之就是個講看看的地方。沒有標準答案，只有我的觀點。</p>
+    <p>我是一個有工程背景的 PM。在我的工作裡，數據從不說謊，但解讀數據的人往往充滿盲點。</p>
+    <p>後來我發現，<strong>人體其實就是一個運作中的專案，而「脈象」就是那份沒被修飾過的進度報告。</strong></p>
+    <p>這裡不談艱澀的醫理，也不開藥單。我只想用 PM 的邏輯，聊聊那些藏在血管跳動裡的生活觀察——關於我們如何透支身體去交換成就，關於情緒如何像 Bug 一樣卡住系統，以及那些你在會議室裡不敢說，但脈搏卻在大聲嚷嚷的真心話。</p>
 </section>
 
 <section class="posts" aria-label="文章列表">
-    <h2>最新文章</h2>
+    <h2>最新觀察</h2>
 
     {% for post in site.posts limit:10 %}
     <article class="post-card">
         <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+        <p class="excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
         {% for tag in post.tags %}
         <span class="tag">{{ tag }}</span>
         {% endfor %}
@@ -27,6 +29,7 @@ description: 海倫講看脈 - 一個分享生活觀察、人性思考與個人�
 
 <section id="about" class="about" aria-label="關於作者">
     <h2>關於海倫</h2>
-    <p>一個喜歡觀察、喜歡思考的人。相信每個人都有自己的故事，每件事都有不同的角度。</p>
-    <p>這個部落格沒有什麼偉大的目標，就是記錄一些想法，分享一些觀察。如果剛好對你有幫助，或者讓你產生一些想法，那就太好了。</p>
+    <p>產品經理 (PM)，理科腦，身體訊號觀察家。</p>
+    <p>喜歡用邏輯去拆解感性的訊號。相信身體比大腦誠實，脈象比履歷表更能說明一個人的狀態。</p>
+    <p>在這裡，我們不談對錯，只談觀察。試著從脈搏的跳動中，聽懂那些身體想告訴你的事。</p>
 </section>
