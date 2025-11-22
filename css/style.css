@@ -113,50 +113,61 @@ main {
 }
 
 .post-card {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
-    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    background: transparent;
+    border-radius: 0;
 }
 
 .post-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: none;
+    box-shadow: none;
 }
 
 .post-card .date {
-    font-size: 0.85rem;
-    color: #999;
+    font-size: 0.9rem;
+    color: #95a5a6;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: monospace;
 }
 
 .post-card h3 {
-    margin: 0.5rem 0;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
 }
 
 .post-card h3 a {
-    color: var(--text-color);
+    color: #2c3e50;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .post-card h3 a:hover {
-    color: var(--accent-color);
+    color: #7f8c8d;
 }
 
 .post-card .excerpt {
-    color: #666;
-    font-size: 0.95rem;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.8;
     margin-bottom: 0.5rem;
+    font-weight: 400;
 }
 
-.post-card .tag {
+.post-card .tag,
+.tag {
     display: inline-block;
-    background: var(--accent-light);
-    color: var(--accent-color);
-    padding: 0.2rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.85em;
+    margin-top: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1px solid #eee;
 }
 
 /* About Section */
