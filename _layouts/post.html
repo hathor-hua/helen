@@ -32,40 +32,15 @@ og_type: article
     </a>
 </section>
 
-<!-- 留言討論區（可收合） -->
-<section class="comments-section collapsible">
-    <button class="comments-toggle" onclick="toggleComments()">
-        <h3>
-            <span class="toggle-icon">▼</span>
-            留言討論
-        </h3>
-    </button>
-    <div class="comments-content" id="comments-content">
-        <div id="cusdis_thread"
-          data-host="https://cusdis.com"
-          data-app-id="e9617376-039b-4dee-81f8-a3aa9f4a26a6"
-          data-page-id="{{ page.url }}"
-          data-page-url="{{ page.url | absolute_url }}"
-          data-page-title="{{ page.title }}"
-        ></div>
-        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-    </div>
+<!-- 留言區 -->
+<section class="comments-section simple">
+    <h3>留言討論</h3>
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="e9617376-039b-4dee-81f8-a3aa9f4a26a6"
+      data-page-id="{{ page.url }}"
+      data-page-url="{{ page.url | absolute_url }}"
+      data-page-title="{{ page.title }}"
+    ></div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </section>
-
-<script>
-function toggleComments() {
-    var content = document.getElementById('comments-content');
-    var icon = document.querySelector('.toggle-icon');
-    var section = document.querySelector('.comments-section');
-
-    if (content.classList.contains('collapsed')) {
-        content.classList.remove('collapsed');
-        icon.textContent = '▼';
-        section.classList.remove('is-collapsed');
-    } else {
-        content.classList.add('collapsed');
-        icon.textContent = '▶';
-        section.classList.add('is-collapsed');
-    }
-}
-</script>

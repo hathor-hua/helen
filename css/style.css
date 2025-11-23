@@ -761,12 +761,27 @@ footer .bmc-btn:hover {
 
 /* Comments Section */
 .comments-section {
-    background: linear-gradient(135deg, var(--card-bg) 0%, var(--accent-light) 100%);
-    padding: 2.5rem;
-    border-radius: 20px;
-    border: 2px solid var(--accent-color);
-    margin-top: 2.5rem;
-    box-shadow: var(--shadow-hover);
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding: 0 2rem;
+}
+
+.comments-section.simple {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.comments-section.simple h3 {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-light);
+}
+
+.comments-section.simple h3::before {
+    content: '💬 ';
 }
 
 .comments-section h3 {
@@ -789,60 +804,10 @@ footer .bmc-btn:hover {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Collapsible Comments Section */
-.comments-section.collapsible {
-    position: relative;
-}
-
-.comments-toggle {
-    width: 100%;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.comments-toggle h3 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0;
-    padding-bottom: 0.8rem;
-    transition: color 0.2s;
-}
-
-.comments-toggle:hover h3 {
-    color: var(--accent-dark);
-}
-
-.toggle-icon {
-    font-size: 0.7rem;
-    transition: transform 0.2s ease;
-    display: inline-block;
-}
-
-.comments-content {
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    max-height: 2000px;
-    opacity: 1;
-}
-
-.comments-content.collapsed {
-    max-height: 0;
-    opacity: 0;
-    padding: 0;
-}
-
-.comments-section.is-collapsed {
-    padding-bottom: 1.5rem;
-}
-
-.comments-section.is-collapsed .comments-toggle h3 {
-    border-bottom: none;
-    padding-bottom: 0;
+@media (max-width: 600px) {
+    .comments-section {
+        padding: 0 1rem;
+    }
 }
 
 /* Responsive */
