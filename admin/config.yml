@@ -2,8 +2,8 @@ backend:
   name: github
   repo: hathor-hua/helen
   branch: main
-  base_url: https://raspy-snow-0605.hathorhua.workers.dev
-  auth_endpoint: auth
+  auth_type: pkce
+  app_id: Ov23liGRd6VVoTDPR7gr
 
 locale: 'zh_Hant'
 
