@@ -288,6 +288,12 @@ footer {
     background: linear-gradient(to top, rgba(155, 123, 94, 0.03), transparent);
 }
 
+footer .copyright-notice {
+    font-size: 0.75rem;
+    color: #bbb;
+    margin-top: 0.5rem;
+}
+
 /* Article Page Styles */
 .article {
     background: var(--card-bg);
