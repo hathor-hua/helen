@@ -1,0 +1,32 @@
+---
+layout: default
+title: 文章分類
+description: 依標籤瀏覽所有文章
+---
+
+<section class="tags-page">
+    <h2>文章分類</h2>
+
+    {% assign tags = site.posts | map: "tags" | uniq | compact %}
+
+    <div class="tags-nav">
+        {% for tag in site.tags %}
+        <a href="#{{ tag[0] | slugify }}" class="tag-link">{{ tag[0] }} ({{ tag[1].size }})</a>
+        {% endfor %}
+    </div>
+
+    {% for tag in site.tags %}
+    <div class="tag-section" id="{{ tag[0] | slugify }}">
+        <h3>{{ tag[0] }}</h3>
+        <ul class="archive-list">
+            {% for post in tag[1] %}
+            <li>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+
+</section>

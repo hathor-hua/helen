@@ -301,6 +301,51 @@ footer {
     font-size: 0.75rem;
 }
 
+/* Tags Page */
+.tags-page h2 {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-light);
+}
+
+.tags-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.tag-link {
+    display: inline-block;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    text-decoration: none;
+    border: 1px solid #eee;
+    transition: all 0.2s;
+}
+
+.tag-link:hover {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.tag-section {
+    margin-bottom: 3rem;
+}
+
+.tag-section h3 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
 /* Support Section */
 .support-section {
     background: var(--card-bg);
