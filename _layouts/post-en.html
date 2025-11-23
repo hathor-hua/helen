@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Helen's Pulse Notes</title>
+    <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+    <link rel="icon" href="{{ '/assets/logo.png' | relative_url }}" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="{{ '/assets/logo.png' | relative_url }}" alt="Helen's Pulse Notes" class="logo">
+            <div class="site-title">
+                <h1>Helen's Pulse Notes</h1>
+                <p class="tagline">Body wisdom, quietly observed</p>
+            </div>
+        </div>
+        <nav aria-label="Main Navigation">
+            <a href="{{ '/en/' | relative_url }}">Home</a>
+            <a href="{{ '/en/#about' | relative_url }}">About</a>
+            <a href="{{ '/' | relative_url }}">中文</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="article">
+            <header class="article-header">
+                <h1>{{ page.title }}</h1>
+                <p class="article-meta">
+                    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+                    {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+                </p>
+            </header>
+            <div class="article-content">
+                {{ content }}
+            </div>
+            <a href="{{ '/en/' | relative_url }}" class="back-link">← Back to Home</a>
+        </article>
+    </main>
+
+    <footer>
+        <div class="support-me">
+            <p>If you found this helpful, consider buying me a tea</p>
+            <a href="https://buymeacoffee.com/helenhua" target="_blank" class="bmc-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
+                    <path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.89 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/>
+                </svg>
+                Buy me a coffee
+            </a>
+        </div>
+        <p>&copy; {{ site.time | date: '%Y' }} Helen's Pulse Notes. All Rights Reserved</p>
+        <p class="copyright-notice">All content and images may not be reproduced without permission.</p>
+    </footer>
+</body>
+</html>

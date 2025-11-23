@@ -12,26 +12,20 @@ description: A quiet corner where Traditional Chinese Medicine meets modern life
 <section class="posts" aria-label="Latest Posts">
     <h2>Recent Observations</h2>
 
+    {% for post in site.posts_en limit:10 %}
     <article class="post-card">
-        <time class="date">2025.11.22</time>
-        <h3><a href="{{ '/en/slippery-pulse' | relative_url }}">A Slippery Pulse Isn't Always Good News</a></h3>
-        <p class="excerpt">Many assume a slippery pulse means pregnancy. But in our busy modern world, it's more often a sign of something else—anxiety and metabolic waste racing through your veins.</p>
-        <span class="tag">Body Signals</span>
+        <time class="date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+        {% for tag in post.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
     </article>
+    {% endfor %}
 
-    <article class="post-card">
-        <time class="date">2025.11.21</time>
-        <h3><a href="{{ '/en/borrowed-energy' | relative_url }}">億-Dollar Success, Stretched-Thin Pulse</a></h3>
-        <p class="excerpt">He claimed to be naturally gifted, needing only four hours of sleep. But beneath my fingers, his pulse was taut as a bowstring—his body borrowing against tomorrow.</p>
-        <span class="tag">Body Signals</span>
-    </article>
-
-    <article class="post-card">
-        <time class="date">2025.11.20</time>
-        <h3><a href="{{ '/en/heartbreak-pulse' | relative_url }}">Heartbreak Is a Physical Thing</a></h3>
-        <p class="excerpt">When I took her pulse that day, it felt rough, like scraping a blade across bamboo. Turns out, a broken heart doesn't just hurt emotionally—it physically blocks your blood.</p>
-        <span class="tag">Human Nature</span>
-    </article>
+    {% if site.posts_en.size == 0 %}
+    <p style="color: #999; text-align: center; padding: 2rem;">No posts yet. Check back soon!</p>
+    {% endif %}
 
 </section>
 

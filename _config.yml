@@ -9,6 +9,12 @@ baseurl: ""
 author:
   name: 海倫
 
+# Collections (中英文文章)
+collections:
+  posts_en:
+    output: true
+    permalink: /en/:title/
+
 # 文章設定
 permalink: /posts/:title/
 defaults:
@@ -17,6 +23,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "posts_en"
+    values:
+      layout: "post-en"
 
 # 編碼
 encoding: UTF-8

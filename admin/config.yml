@@ -12,7 +12,7 @@ public_folder: "/assets/images"
 
 collections:
   - name: "posts"
-    label: "文章"
+    label: "中文文章"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -23,6 +23,19 @@ collections:
       - { label: "摘要", name: "description", widget: "string", required: false }
       - { label: "封面圖片", name: "image", widget: "image", required: false }
       - { label: "內文", name: "body", widget: "markdown" }
+
+  - name: "posts_en"
+    label: "English Posts"
+    folder: "_posts_en"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["General"] }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Content", name: "body", widget: "markdown" }
 
   - name: "settings"
     label: "網站設定"
