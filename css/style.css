@@ -294,6 +294,36 @@ footer .copyright-notice {
     margin-top: 0.5rem;
 }
 
+footer .support-me {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+footer .support-me p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+footer .bmc-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF813F 0%, #FF5F5F 100%);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 129, 63, 0.3);
+}
+
+footer .bmc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 129, 63, 0.4);
+}
+
 /* Article Page Styles */
 .article {
     background: var(--card-bg);
