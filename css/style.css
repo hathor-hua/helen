@@ -699,20 +699,24 @@ footer .bmc-btn:hover {
 
 /* Comments Section */
 .comments-section {
-    background: var(--card-bg);
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--accent-light) 100%);
     padding: 2.5rem;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
-    margin-top: 2rem;
-    box-shadow: var(--shadow);
+    border: 2px solid var(--accent-color);
+    margin-top: 2.5rem;
+    box-shadow: var(--shadow-hover);
 }
 
 .comments-section h3 {
-    font-size: 1.1rem;
-    color: var(--accent-color);
+    font-size: 1.2rem;
+    color: var(--accent-dark);
     margin-bottom: 1.2rem;
     padding-bottom: 0.8rem;
-    border-bottom: 2px solid var(--accent-light);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.comments-section h3::before {
+    content: '💬 ';
 }
 
 .comments-placeholder {
