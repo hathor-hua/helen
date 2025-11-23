@@ -41,11 +41,15 @@ collections:
     label: "網站設定"
     files:
       - name: "site"
-        label: "首頁內容"
+        label: "所有文字設定"
         file: "_data/settings.yml"
         fields:
+          - { label: "網站標題", name: "site_title", widget: "string" }
+          - { label: "網站副標題", name: "site_tagline", widget: "string" }
           - { label: "首頁標語", name: "intro_title", widget: "string" }
           - { label: "首頁介紹", name: "intro_text", widget: "text" }
           - { label: "關於標題", name: "about_title", widget: "string" }
           - { label: "關於 - 第一段", name: "about_line1", widget: "string" }
           - { label: "關於 - 第二段", name: "about_line2", widget: "text" }
+          - { label: "打賞區文字", name: "footer_support_text", widget: "string" }
+          - { label: "版權聲明", name: "footer_copyright", widget: "string" }

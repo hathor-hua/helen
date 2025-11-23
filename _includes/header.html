@@ -1,9 +1,9 @@
 <header>
     <div class="header-content">
-        <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.title }}" class="logo">
+        <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.data.settings.site_title }}" class="logo">
         <div class="site-title">
-            <h1>{{ site.title }}</h1>
-            <p class="tagline">{{ site.description }}</p>
+            <h1>{{ site.data.settings.site_title }}</h1>
+            <p class="tagline">{{ site.data.settings.site_tagline }}</p>
         </div>
     </div>
     <nav aria-label="主要導覽">
