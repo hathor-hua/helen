@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: "Noto Serif TC", "Source Han Serif TC", Georgia, serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.9;
@@ -702,6 +702,4 @@ footer {
     }
 }
 
-/* 載入 Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap');
 /* Updated: Sun Nov 23 07:25:06 UTC 2025 */
