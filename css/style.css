@@ -82,7 +82,9 @@ nav {
     max-width: 800px;
     margin: 1.2rem auto 0;
     display: flex;
-    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid var(--border-color);
 }
@@ -741,7 +743,8 @@ footer .bmc-btn:hover {
     }
 
     nav {
-        gap: 1.2rem;
+        gap: 1rem 1.5rem;
+        justify-content: center;
     }
 
     main {
