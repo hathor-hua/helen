@@ -746,6 +746,19 @@ footer .bmc-btn:hover {
     box-shadow: 0 6px 20px rgba(155, 123, 94, 0.4);
 }
 
+/* Post Support Section */
+.post-support {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 600px) {
+    .post-support {
+        padding: 0 1rem;
+    }
+}
+
 /* Comments Section */
 .comments-section {
     background: linear-gradient(135deg, var(--card-bg) 0%, var(--accent-light) 100%);
