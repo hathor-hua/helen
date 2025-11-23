@@ -1,0 +1,48 @@
+---
+layout: default-en
+title: Tags
+description: Browse articles by tag
+---
+
+<section class="tags-page">
+    <h2>Tags</h2>
+
+    {% assign tags = site.posts_en | map: "tags" | join: "," | split: "," | uniq | sort %}
+
+    <div class="tags-cloud">
+        {% for tag in tags %}
+        {% if tag != "" %}
+        <a href="#{{ tag | slugify }}" class="tag-pill">
+            <span class="tag-name">{{ tag }}</span>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    {% if site.posts_en.size == 0 %}
+    <p style="color: #999; text-align: center; padding: 2rem;">No posts yet. Check back soon!</p>
+    {% else %}
+
+    <div class="tags-content">
+        {% for tag in tags %}
+        {% if tag != "" %}
+        <div class="tag-group" id="{{ tag | slugify }}">
+            <h3 class="tag-group-title">{{ tag }}</h3>
+            <div class="tag-posts">
+                {% for post in site.posts_en %}
+                {% if post.tags contains tag %}
+                <a href="{{ post.url | relative_url }}" class="tag-post-card">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m/%d" }}</time>
+                    <span class="tag-post-title">{{ post.title }}</span>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    {% endif %}
+
+</section>

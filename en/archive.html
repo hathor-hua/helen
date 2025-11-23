@@ -1,0 +1,31 @@
+---
+layout: default-en
+title: Articles
+description: All articles by date
+---
+
+<section class="archive">
+    <h2>All Articles</h2>
+
+    {% assign posts_by_year = site.posts_en | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+    {% for year in posts_by_year %}
+    <div class="archive-year">
+        <h3>{{ year.name }}</h3>
+        <ul class="archive-list">
+            {% for post in year.items %}
+            <li>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m/%d" }}</time>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                {% for tag in post.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+
+    {% if site.posts_en.size == 0 %}
+    <p style="color: #999; text-align: center; padding: 2rem;">No posts yet. Check back soon!</p>
+    {% endif %}
+
+</section>
