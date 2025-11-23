@@ -2,6 +2,8 @@ backend:
   name: github
   repo: hathor-hua/helen
   branch: main
+  base_url: https://helen-oauth.hathorhua.workers.dev
+  auth_endpoint: auth
 
 locale: 'zh_Hant'
 
@@ -21,12 +23,3 @@ collections:
       - { label: "摘要", name: "description", widget: "string", required: false }
       - { label: "封面圖片", name: "image", widget: "image", required: false }
       - { label: "內文", name: "body", widget: "markdown" }
-
-  - name: "pages"
-    label: "頁面"
-    files:
-      - label: "關於我"
-        name: "about"
-        file: "_data/about.yml"
-        fields:
-          - { label: "自我介紹", name: "intro", widget: "markdown" }
