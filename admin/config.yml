@@ -23,3 +23,16 @@ collections:
       - { label: "摘要", name: "description", widget: "string", required: false }
       - { label: "封面圖片", name: "image", widget: "image", required: false }
       - { label: "內文", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "網站設定"
+    files:
+      - name: "site"
+        label: "首頁內容"
+        file: "_data/settings.yml"
+        fields:
+          - { label: "首頁標語", name: "intro_title", widget: "string" }
+          - { label: "首頁介紹", name: "intro_text", widget: "text" }
+          - { label: "關於標題", name: "about_title", widget: "string" }
+          - { label: "關於 - 第一段", name: "about_line1", widget: "string" }
+          - { label: "關於 - 第二段", name: "about_line2", widget: "text" }
