@@ -7,6 +7,15 @@
     <meta name="description" content="{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}">
     <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
     <link rel="icon" href="{{ '/assets/logo.png' | relative_url }}" type="image/png">
+
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D5MX9KHNHV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D5MX9KHNHV');
+    </script>
 </head>
 <body>
     <header>
