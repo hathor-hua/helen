@@ -49,6 +49,19 @@
             </div>
             <a href="{{ '/en/' | relative_url }}" class="back-link">← Back to Home</a>
         </article>
+
+        <!-- Comments -->
+        <section class="comments-section">
+            <h3>Comments</h3>
+            <div id="cusdis_thread"
+              data-host="https://cusdis.com"
+              data-app-id="e9617376-039b-4dee-81f8-a3aa9f4a26a6"
+              data-page-id="{{ page.url }}"
+              data-page-url="{{ page.url | absolute_url }}"
+              data-page-title="{{ page.title }}"
+            ></div>
+            <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+        </section>
     </main>
 
     <footer>
