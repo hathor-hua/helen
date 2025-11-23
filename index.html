@@ -26,6 +26,11 @@ description: 海倫講看脈 - 一處靜謐角落，讓傳統脈學與現代生�
 
 <section id="about" class="about" aria-label="關於作者">
     <h2>{{ site.data.settings.about_title }}</h2>
-    <p>{{ site.data.settings.about_line1 }}</p>
-    <p>{{ site.data.settings.about_line2 }}</p>
+    <div class="about-content">
+        <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.data.settings.site_title }}" class="about-avatar">
+        <div class="about-text">
+            <p>{{ site.data.settings.about_line1 }}</p>
+            <p>{{ site.data.settings.about_line2 }}</p>
+        </div>
+    </div>
 </section>

@@ -64,6 +64,11 @@ header {
     box-shadow: 0 6px 20px rgba(155, 123, 94, 0.3);
 }
 
+.logo-link {
+    display: block;
+    flex-shrink: 0;
+}
+
 .site-title h1 {
     font-size: 1.6rem;
     font-weight: 700;
@@ -270,6 +275,16 @@ main {
 
 .about-text {
     flex: 1;
+}
+
+.about-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-light);
+    box-shadow: 0 4px 20px rgba(155, 123, 94, 0.2);
+    flex-shrink: 0;
 }
 
 .about-animation {
