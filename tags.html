@@ -7,26 +7,29 @@ description: 依標籤瀏覽所有文章
 <section class="tags-page">
     <h2>文章分類</h2>
 
-    {% assign tags = site.posts | map: "tags" | uniq | compact %}
-
-    <div class="tags-nav">
+    <div class="tags-cloud">
         {% for tag in site.tags %}
-        <a href="#{{ tag[0] | slugify }}" class="tag-link">{{ tag[0] }} ({{ tag[1].size }})</a>
+        <a href="#{{ tag[0] | slugify }}" class="tag-pill">
+            <span class="tag-name">{{ tag[0] }}</span>
+            <span class="tag-count">{{ tag[1].size }}</span>
+        </a>
         {% endfor %}
     </div>
 
-    {% for tag in site.tags %}
-    <div class="tag-section" id="{{ tag[0] | slugify }}">
-        <h3>{{ tag[0] }}</h3>
-        <ul class="archive-list">
-            {% for post in tag[1] %}
-            <li>
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </li>
-            {% endfor %}
-        </ul>
+    <div class="tags-content">
+        {% for tag in site.tags %}
+        <div class="tag-group" id="{{ tag[0] | slugify }}">
+            <h3 class="tag-group-title">{{ tag[0] }}</h3>
+            <div class="tag-posts">
+                {% for post in tag[1] %}
+                <a href="{{ post.url | relative_url }}" class="tag-post-card">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m/%d" }}</time>
+                    <span class="tag-post-title">{{ post.title }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 
 </section>

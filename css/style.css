@@ -440,6 +440,118 @@ footer {
     letter-spacing: 1px;
 }
 
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+}
+
+.tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--card-bg);
+    padding: 0.7rem 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.tag-pill:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.tag-pill .tag-name {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.tag-pill:hover .tag-name {
+    color: white;
+}
+
+.tag-pill .tag-count {
+    background: var(--accent-light);
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.tag-pill:hover .tag-count {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.tags-content {
+    margin-top: 2rem;
+}
+
+.tag-group {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.tag-group-title {
+    font-size: 1rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-light);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.tag-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tag-post-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.tag-post-card:hover {
+    background: var(--accent-light);
+}
+
+.tag-post-card time {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-family: "SF Mono", Monaco, monospace;
+    min-width: 45px;
+}
+
+.tag-post-card .tag-post-title {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.tag-post-card:hover .tag-post-title {
+    color: var(--accent-dark);
+}
+
+/* Keep old styles for backward compatibility */
 .tags-nav {
     display: flex;
     flex-wrap: wrap;
