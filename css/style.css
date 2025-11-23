@@ -260,6 +260,20 @@ main {
     position: relative;
 }
 
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-animation {
+    flex-shrink: 0;
+}
+
 .about::before {
     content: '"';
     position: absolute;
@@ -274,6 +288,19 @@ main {
 .about p {
     margin-bottom: 1rem;
     padding-left: 1rem;
+}
+
+@media (max-width: 600px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-animation {
+        order: -1;
+    }
+    .about p {
+        padding-left: 0;
+    }
 }
 
 /* Footer */
