@@ -411,6 +411,55 @@ footer .bmc-btn:hover {
     font-style: italic;
 }
 
+/* Tables */
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.article-content thead {
+    background: var(--accent-light);
+}
+
+.article-content th {
+    padding: 1rem 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--accent-dark);
+    border-bottom: 2px solid var(--accent-color);
+    white-space: nowrap;
+}
+
+.article-content td {
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-content tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.article-content tbody tr:hover {
+    background: var(--accent-light);
+}
+
+@media (max-width: 600px) {
+    .article-content table {
+        font-size: 0.85rem;
+    }
+    .article-content th,
+    .article-content td {
+        padding: 0.6rem 0.4rem;
+    }
+}
+
 .back-link {
     display: inline-flex;
     align-items: center;
