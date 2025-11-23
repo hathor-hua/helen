@@ -11,5 +11,101 @@
 </head>
 <body>
     <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+    <script>
+    // 表格範本組件
+    CMS.registerEditorComponent({
+        id: "table",
+        label: "表格",
+        fields: [
+            {
+                name: "headers",
+                label: "欄位標題（用逗號分隔）",
+                widget: "string",
+                default: "欄位1, 欄位2, 欄位3"
+            },
+            {
+                name: "rows",
+                label: "表格內容（每行用換行分隔，欄位用逗號分隔）",
+                widget: "text",
+                default: "資料1, 資料2, 資料3\n資料4, 資料5, 資料6"
+            }
+        ],
+        pattern: /^\|(.+)\|\n\|[-:\s|]+\|\n((?:\|.+\|\n?)+)/,
+        fromBlock: function(match) {
+            const headers = match[1].split('|').map(s => s.trim()).filter(s => s).join(', ');
+            const rows = match[2].trim().split('\n').map(row =>
+                row.split('|').map(s => s.trim()).filter(s => s).join(', ')
+            ).join('\n');
+            return { headers, rows };
+        },
+        toBlock: function(data) {
+            const headers = data.headers.split(',').map(s => s.trim());
+            const separator = headers.map(() => ':---:').join(' | ');
+            const headerRow = '| ' + headers.join(' | ') + ' |';
+            const separatorRow = '|' + separator + '|';
+            const dataRows = data.rows.split('\n').map(row =>
+                '| ' + row.split(',').map(s => s.trim()).join(' | ') + ' |'
+            ).join('\n');
+            return headerRow + '\n' + separatorRow + '\n' + dataRows;
+        },
+        toPreview: function(data) {
+            const headers = data.headers.split(',').map(s => s.trim());
+            const rows = data.rows.split('\n').map(row => row.split(',').map(s => s.trim()));
+            let html = '<table style="border-collapse:collapse;width:100%;margin:1rem 0;">';
+            html += '<thead><tr>' + headers.map(h =>
+                '<th style="border:1px solid #ddd;padding:8px;background:#f5f5f5;">' + h + '</th>'
+            ).join('') + '</tr></thead>';
+            html += '<tbody>' + rows.map(row =>
+                '<tr>' + row.map(cell =>
+                    '<td style="border:1px solid #ddd;padding:8px;text-align:center;">' + cell + '</td>'
+                ).join('') + '</tr>'
+            ).join('') + '</tbody>';
+            html += '</table>';
+            return html;
+        }
+    });
+
+    // 八卦象數表格快捷範本
+    CMS.registerEditorComponent({
+        id: "bagua-table",
+        label: "八卦對照表",
+        fields: [],
+        pattern: /<!-- bagua-table -->/,
+        fromBlock: function() { return {}; },
+        toBlock: function() {
+            return `| 數字 | 卦名 | 五行 | 臟腑 | 部位 |
+|:---:|:---:|:---:|:---:|:---:|
+| 1 | 乾 | 金 | 肺、大腸 | 頭、胸 |
+| 2 | 兌 | 金 | 肺、大腸 | 口、咽喉 |
+| 3 | 離 | 火 | 心、小腸 | 眼、血液 |
+| 4 | 震 | 木 | 肝、膽 | 足、左肋 |
+| 5 | 巽 | 木 | 肝、膽 | 股、腸 |
+| 6 | 坎 | 水 | 腎、膀胱 | 耳、腰 |
+| 7 | 艮 | 土 | 脾、胃 | 手、背、鼻 |
+| 8 | 坤 | 土 | 脾、胃 | 腹、肌肉 |`;
+        },
+        toPreview: function() {
+            return `<table style="border-collapse:collapse;width:100%;margin:1rem 0;">
+                <thead><tr>
+                    <th style="border:1px solid #ddd;padding:8px;background:#f3ebe3;">數字</th>
+                    <th style="border:1px solid #ddd;padding:8px;background:#f3ebe3;">卦名</th>
+                    <th style="border:1px solid #ddd;padding:8px;background:#f3ebe3;">五行</th>
+                    <th style="border:1px solid #ddd;padding:8px;background:#f3ebe3;">臟腑</th>
+                    <th style="border:1px solid #ddd;padding:8px;background:#f3ebe3;">部位</th>
+                </tr></thead>
+                <tbody>
+                    <tr><td style="border:1px solid #ddd;padding:8px;text-align:center;">1</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">乾</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">金</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">肺、大腸</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">頭、胸</td></tr>
+                    <tr><td style="border:1px solid #ddd;padding:8px;text-align:center;">2</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">兌</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">金</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">肺、大腸</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">口、咽喉</td></tr>
+                    <tr><td style="border:1px solid #ddd;padding:8px;text-align:center;">3</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">離</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">火</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">心、小腸</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">眼、血液</td></tr>
+                    <tr><td style="border:1px solid #ddd;padding:8px;text-align:center;">4</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">震</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">木</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">肝、膽</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">足、左肋</td></tr>
+                    <tr><td style="border:1px solid #ddd;padding:8px;text-align:center;">5</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">巽</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">木</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">肝、膽</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">股、腸</td></tr>
+                    <tr><td style="border:1px solid #ddd;padding:8px;text-align:center;">6</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">坎</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">水</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">腎、膀胱</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">耳、腰</td></tr>
+                    <tr><td style="border:1px solid #ddd;padding:8px;text-align:center;">7</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">艮</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">土</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">脾、胃</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">手、背、鼻</td></tr>
+                    <tr><td style="border:1px solid #ddd;padding:8px;text-align:center;">8</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">坤</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">土</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">脾、胃</td><td style="border:1px solid #ddd;padding:8px;text-align:center;">腹、肌肉</td></tr>
+                </tbody>
+            </table>`;
+        }
+    });
+    </script>
 </body>
 </html>

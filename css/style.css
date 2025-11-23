@@ -64,6 +64,11 @@ header {
     box-shadow: 0 6px 20px rgba(155, 123, 94, 0.3);
 }
 
+.logo-link {
+    display: block;
+    flex-shrink: 0;
+}
+
 .site-title h1 {
     font-size: 1.6rem;
     font-weight: 700;
@@ -272,6 +277,16 @@ main {
     flex: 1;
 }
 
+.about-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-light);
+    box-shadow: 0 4px 20px rgba(155, 123, 94, 0.2);
+    flex-shrink: 0;
+}
+
 .about-animation {
     flex-shrink: 0;
 }
@@ -409,6 +424,55 @@ footer .bmc-btn:hover {
     background: var(--accent-light);
     border-radius: 0 12px 12px 0;
     font-style: italic;
+}
+
+/* Tables */
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.article-content thead {
+    background: var(--accent-light);
+}
+
+.article-content th {
+    padding: 1rem 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--accent-dark);
+    border-bottom: 2px solid var(--accent-color);
+    white-space: nowrap;
+}
+
+.article-content td {
+    padding: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-content tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.article-content tbody tr:hover {
+    background: var(--accent-light);
+}
+
+@media (max-width: 600px) {
+    .article-content table {
+        font-size: 0.85rem;
+    }
+    .article-content th,
+    .article-content td {
+        padding: 0.6rem 0.4rem;
+    }
 }
 
 .back-link {
@@ -697,14 +761,42 @@ footer .bmc-btn:hover {
     box-shadow: 0 6px 20px rgba(155, 123, 94, 0.4);
 }
 
+/* Post Support Section */
+.post-support {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 600px) {
+    .post-support {
+        padding: 0 1rem;
+    }
+}
+
 /* Comments Section */
 .comments-section {
-    background: linear-gradient(135deg, var(--card-bg) 0%, var(--accent-light) 100%);
-    padding: 2.5rem;
-    border-radius: 20px;
-    border: 2px solid var(--accent-color);
-    margin-top: 2.5rem;
-    box-shadow: var(--shadow-hover);
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding: 0 2rem;
+}
+
+.comments-section.simple {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.comments-section.simple h3 {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-light);
+}
+
+.comments-section.simple h3::before {
+    content: '💬 ';
 }
 
 .comments-section h3 {
@@ -725,6 +817,12 @@ footer .bmc-btn:hover {
     text-align: center;
     padding: 2.5rem 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (max-width: 600px) {
+    .comments-section {
+        padding: 0 1rem;
+    }
 }
 
 /* Responsive */

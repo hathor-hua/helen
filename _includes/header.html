@@ -1,6 +1,8 @@
 <header>
     <div class="header-content">
-        <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.data.settings.site_title }}" class="logo">
+        <a href="{{ '/#about' | relative_url }}" class="logo-link">
+            <img src="{{ '/assets/logo.png' | relative_url }}" alt="{{ site.data.settings.site_title }}" class="logo">
+        </a>
         <div class="site-title">
             <h1>{{ site.data.settings.site_title }}</h1>
             <p class="tagline">{{ site.data.settings.site_tagline }}</p>
